@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Avihai Photography | Santa Cruz Photography, Video & Live Production</title>
+  <meta
+    name="description"
+    content="Santa Cruz photography, video production, video editing, and live streaming for events, businesses, organizations, and individuals."
+  >
+
+  <meta property="og:title" content="Avihai Photography">
+  <meta
+    property="og:description"
+    content="Professional photography, video, and live production in Santa Cruz and throughout the Bay Area."
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --cream: #fbf8f1;
+      --paper: #fffefa;
+      --sea-light: #e8f2f1;
+      --sand: #efe5d5;
+      --ink: #17343b;
+      --ink-soft: #526a6f;
+      --teal: #2f7680;
+      --teal-dark: #245d66;
+      --line: #d8dfdc;
+      --shadow: 0 18px 50px rgba(25, 69, 76, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max-width: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    body,
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(47, 118, 128, 0.35);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .container {
+      width: min(94%, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 248, 241, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(23, 52, 59, 0.08);
+    }
+
+    .nav-row {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    .desktop-nav a {
+      transition: color 160ms ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--ink);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: relative;
+    }
+
+    .mobile-nav summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 750;
+    }
+
+    .mobile-nav summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      right: 0;
+      top: 42px;
+      min-width: 220px;
+      padding: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-nav-panel a {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 9px;
+      color: var(--ink-soft);
+      font-weight: 650;
+    }
+
+    .mobile-nav-panel a:hover {
+      background: var(--sea-light);
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: 78px 0 92px;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(239, 229, 213, 0.72), transparent 32%),
+        linear-gradient(180deg, var(--cream), #eef6f5);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      margin: 0 0 17px;
+      color: var(--teal);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 26px;
+      font-size: clamp(3.8rem, 6.6vw, 6.7rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .hero-intro {
+      margin: 0 0 14px;
+      max-width: 650px;
+      color: #294d54;
+      font-size: clamp(1.28rem, 2vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .hero-promise {
+      margin: 0 0 10px;
+      color: var(--ink-soft);
+      font-size: 1.12rem;
+      font-weight: 650;
+    }
+
+    .hero-location {
+      margin: 0 0 34px;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 780;
+      transition:
+        transform 160ms ease,
+        background 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .button-primary:hover {
+      background: var(--teal-dark);
+      border-color: var(--teal-dark);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button-secondary:hover {
+      background: #fff;
+    }
+
+    .hero-photo {
+      min-height: 680px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--sea-light);
+      box-shadow: 0 28px 68px rgba(25, 69, 76, 0.13);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 680px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    section {
+      padding: 104px 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 540px);
+      align-items: end;
+      gap: 34px;
+      margin-bottom: 42px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    #photography .section-heading {
+      grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2.75rem, 5vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+    }
+
+    /* Larger primary portfolio images */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .photo-card {
+      min-height: 540px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--sea-light);
+      box-shadow: 0 14px 38px rgba(25, 69, 76, 0.065);
+    }
+
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(3) {
+      min-height: 650px;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: transform 240ms ease;
+    }
+
+    .photo-card:hover img,
+    .more-work-item:hover img {
+      transform: scale(1.012);
+    }
+
+    .services-section {
+      background: rgba(255, 254, 250, 0.58);
+      border-block: 1px solid rgba(23, 52, 59, 0.06);
+    }
+
+    .service-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .service-list-item {
+      padding: 25px 2px;
+      border-bottom: 1px solid var(--line);
+      font-size: clamp(1.45rem, 2vw, 1.9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      box-shadow: 0 12px 34px rgba(25, 69, 76, 0.05);
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16 / 9;
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.72), transparent 32%),
+        linear-gradient(135deg, var(--sea-light), #f7fbfa);
+      color: var(--ink-soft);
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .video-copy {
+      padding: 24px;
+    }
+
+    .video-copy h3 {
+      margin: 0 0 7px;
+      font-size: 1.35rem;
+    }
+
+    .video-copy p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .about-section {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      align-items: center;
+      gap: 42px;
+      padding: 46px;
+      border: 1px solid #cededc;
+      border-radius: 22px;
+      background: #e5f0ef;
+    }
+
+    .about-photo {
+      width: 170px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--sand);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .about-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 4.8vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .about-copy p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--ink-soft);
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .contact-section {
+      padding-top: 96px;
+      padding-bottom: 92px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 40px;
+      padding: 52px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 16px;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .contact-lead {
+      margin: 0;
+      max-width: 740px;
+      color: var(--ink-soft);
+      font-size: 1.14rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 18px;
+    }
+
+    .contact-details a {
+      color: var(--teal-dark);
+      font-size: 1.06rem;
+      font-weight: 750;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .contact-details a:hover {
+      color: var(--ink);
+    }
+
+    /* Larger secondary gallery */
+    .more-work-section {
+      padding-top: 52px;
+      padding-bottom: 100px;
+    }
+
+    .more-work-heading {
+      margin: 0 0 30px;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .more-work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .more-work-item {
+      min-height: 440px;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--sea-light);
+    }
+
+    .more-work-item:nth-child(3n + 2) {
+      min-height: 560px;
+    }
+
+    .more-work-item img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: transform 240ms ease;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: #74878a;
+      font-size: 0.96rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(10, 20, 23, 0.92);
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-image {
+      display: block;
+      max-width: min(95vw, 1650px);
+      max-height: 91vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1.9rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 950px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .hero-photo {
+        min-height: 560px;
+        order: -1;
+      }
+
+      .hero-photo img {
+        min-height: 560px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card {
+        grid-template-columns: 150px 1fr;
+        gap: 32px;
+        padding: 38px;
+      }
+
+      .about-photo {
+        width: 130px;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 16px;
+      }
+
+      .nav-row {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        padding-top: 38px;
+        padding-bottom: 66px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.1rem, 13vw, 5rem);
+      }
+
+      .hero-photo {
+        min-height: 430px;
+      }
+
+      .hero-photo img {
+        min-height: 430px;
+      }
+
+      section {
+        padding: 76px 0;
+      }
+
+      .photo-grid,
+      .more-work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card,
+      .photo-card:nth-child(2),
+      .photo-card:nth-child(3),
+      .more-work-item,
+      .more-work-item:nth-child(3n + 2) {
+        min-height: 430px;
+      }
+
+      .about-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .about-photo {
+        width: 130px;
+      }
+
+      .video-placeholder {
+        min-height: 0;
+      }
+
+      .lightbox {
+        padding: 14px;
+      }
+
+      .lightbox-image {
+        max-width: 96vw;
+        max-height: 87vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#home">Avihai Photography</a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#photography">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#video">Video</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+          <a href="#photography">Portfolio</a>
+          <a href="#services">Services</a>
+          <a href="#video">Video</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Santa Cruz · Bay Area</p>
+
+          <h1>Photography, Video & Live Production</h1>
+
+          <p class="hero-intro">
+            Professional coverage for events, businesses, organizations, and individuals.
+          </p>
+
+          <p class="hero-promise">
+            Clear communication. Upfront quotes. Professional results.
+          </p>
+
+          <p class="hero-location">
+            Based in Santa Cruz and available throughout the Bay Area and beyond.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#photography">View Portfolio</a>
+            <a class="button button-secondary" href="#contact">Get a Quote</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img
+            src="images/hero.jpg"
+            alt="Featured photograph by Avi"
+            width="1200"
+            height="1500"
+            data-lightbox
+            onerror="this.style.display='none'"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="photography">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Portfolio</h2>
+        </div>
+
+        <div class="photo-grid">
+          <div class="photo-card">
+            <img src="images/photo-1.jpg" alt="Portfolio photograph by Avi" width="1400" height="1050" data-lightbox onerror="this.style.display='none'">
+          </div>
+
+          <div class="photo-card">
+            <img src="images/photo-2.jpg" alt="Portfolio photograph by Avi" width="1100" height="1400" loading="lazy" data-lightbox onerror="this.style.display='none'">
+          </div>
+
+          <div class="photo-card">
+            <img src="images/photo-3.jpg" alt="Portfolio photograph by Avi" width="1100" height="1400" loading="lazy" data-lightbox onerror="this.style.display='none'">
+          </div>
+
+          <div class="photo-card">
+            <img src="images/photo-4.jpg" alt="Portfolio photograph by Avi" width="1400" height="1050" loading="lazy" data-lightbox onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Services</h2>
+          <p>Projects of all sizes are welcome.</p>
+        </div>
+
+        <div class="service-list" aria-label="Services">
+          <div class="service-list-item">Event Photography</div>
+          <div class="service-list-item">Portraits</div>
+          <div class="service-list-item">Pet Photography</div>
+          <div class="service-list-item">Video Production</div>
+          <div class="service-list-item">Video Editing</div>
+          <div class="service-list-item">Live Streaming</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Video</h2>
+          <p>
+            Video production, editing, and live streaming for events, organizations, and businesses.
+          </p>
+        </div>
+
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="video-placeholder">
+              Add a YouTube or Vimeo video here.
+            </div>
+            <div class="video-copy">
+              <h3>Featured Project</h3>
+              <p>Add a project title and short description here.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-placeholder">
+              Add another YouTube or Vimeo video here.
+            </div>
+            <div class="video-copy">
+              <h3>Event Highlight</h3>
+              <p>Add another video project here.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-photo">
+            <img
+              src="images/me.jpg"
+              alt="Avi"
+              width="800"
+              height="1000"
+              loading="lazy"
+              data-lightbox
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="about-copy">
+            <h2>About</h2>
+            <p>
+              I’m Avi, a Santa Cruz-based photographer and videographer. I enjoy working with people,
+              businesses, and organizations to create strong images and video without making the process
+              more complicated than it needs to be.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Let’s talk about your project.</h2>
+
+            <p class="contact-lead">
+              Send me a few details and I’ll get back to you with availability and a clear quote.
+            </p>
+
+            <div class="contact-details">
+              <a href="mailto:avihaisaadi@gmail.com">avihaisaadi@gmail.com</a>
+              <a href="tel:+18312397867">831-239-7867</a>
+            </div>
+          </div>
+
+          <a class="button button-primary" href="mailto:avihaisaadi@gmail.com">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="more-work-section" aria-labelledby="more-work-heading">
+      <div class="container">
+        <h2 class="more-work-heading" id="more-work-heading">More Work</h2>
+
+        <div class="more-work-grid">
+          <div class="more-work-item"><img src="images/photo-5.jpg" alt="Portfolio photograph 5 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-6.jpg" alt="Portfolio photograph 6 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-7.jpg" alt="Portfolio photograph 7 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-8.jpg" alt="Portfolio photograph 8 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-9.jpg" alt="Portfolio photograph 9 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-10.jpg" alt="Portfolio photograph 10 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-11.jpg" alt="Portfolio photograph 11 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-12.jpg" alt="Portfolio photograph 12 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+          <div class="more-work-item"><img src="images/photo-13.jpg" alt="Portfolio photograph 13 by Avi" width="1200" height="900" loading="lazy" data-lightbox onerror="this.style.display='none'"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Avihai Photography. All rights reserved.
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photograph">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close enlarged photograph">×</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const enlargeableImages = document.querySelectorAll('[data-lightbox]');
+
+    function openLightbox(image) {
+      if (!image.src || image.style.display === 'none') return;
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt || 'Enlarged photograph';
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    enlargeableImages.forEach((image) => {
+      image.addEventListener('click', () => openLightbox(image));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
